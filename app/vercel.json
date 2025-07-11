@@ -1,0 +1,6 @@
+{
+  "buildCommand": "pnpm run build",
+  "installCommand": "pnpm install",
+  "outputDirectory": "dist",
+  "nodeVersion": "18.x"
+}

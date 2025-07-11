@@ -1,0 +1,38 @@
+name: XMRT CI Pipeline
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+    - name: Install dependencies
+      run: |
+        cd app
+        npm ci
+    - name: Run security audit
+      run: |
+        pip install slither-analyzer
+        slither ./contracts --checklist
+    - name: Run contract tests
+      run: |
+        cd contracts
+        npm install
+        npx hardhat test
+    - name: Run frontend tests
+      run: |
+        cd app
+        npm test
+    - name: Build frontend
+      run: |
+        cd app
+        npm run build
+    - name: Deploy to testnet
+      if: github.ref == 'refs/heads/main'
+      run: |
+        cd contracts
+        npx hardhat run scripts/deploy.js --network sepolia

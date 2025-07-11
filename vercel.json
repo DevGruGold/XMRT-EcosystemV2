@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "buildCommand": "cd frontend/xmrt-dao-frontend && pnpm install && pnpm run build",
+  "outputDirectory": "frontend/xmrt-dao-frontend/dist",
+  "installCommand": "pnpm install --store=node_modules/.pnpm-store",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "build": {
+    "env": {
+      "PNPM_VERSION": "10.4.1"
+    }
+  }
+}
+

@@ -1,0 +1,5 @@
+{
+  "buildCommand": "npm run vercel-build",
+  "installCommand": "./install.sh",
+  "outputDirectory": "dist"
+}

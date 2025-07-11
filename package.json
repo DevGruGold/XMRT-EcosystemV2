@@ -1,0 +1,37 @@
+{
+  "name": "xmrt-ecosystem",
+  "version": "1.0.0",
+  "description": "Full-stack XMRT-Ecosystem DAO prototype with Eliza AI integration",
+  "scripts": {
+    "build": "cd frontend/xmrt-dao-frontend && pnpm install && pnpm run build",
+    "vercel-build": "cd frontend/xmrt-dao-frontend && pnpm install && pnpm run build",
+    "dev": "concurrently \"bash -c \"cd backend/xmrt-dao-backend && source venv/bin/activate && python src/main.py\"\" \"cd frontend/xmrt-dao-frontend && pnpm run dev\"",
+    "install-frontend": "cd frontend/xmrt-dao-frontend && pnpm install",
+    "install-backend": "cd backend/xmrt-dao-backend && pip install -r requirements.txt"
+  },
+  "keywords": [
+    "dao",
+    "blockchain",
+    "ai",
+    "eliza",
+    "ethereum",
+    "defi",
+    "governance"
+  ],
+  "author": "Joseph Andrew Lee (DevGruGold)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevGruGold/XMRT-Ecosystem.git"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@10.4.1",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.3.0",
+    "concurrently": "^9.2.0"
+  }
+}
+

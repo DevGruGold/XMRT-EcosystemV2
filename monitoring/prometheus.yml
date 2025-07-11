@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'node_app'
+    static_configs:
+      - targets: ['app:3000']
+  - job_name: 'blockchain'
+    static_configs:
+      - targets: ['blockchain-node:8545']
