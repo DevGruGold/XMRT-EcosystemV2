@@ -10,10 +10,15 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 18
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+        run_install: false
     - name: Install dependencies
       run: |
         cd app
-        npm ci
+        pnpm ci
     - name: Run security audit
       run: |
         pip install slither-analyzer
