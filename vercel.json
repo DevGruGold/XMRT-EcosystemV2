@@ -12,8 +12,12 @@
   ],
   "build": {
     "env": {
-      "PNPM_VERSION": "10.4.1"
+      "PNPM_VERSION": "8.15.6"
+    }
+  },
+  "functions": {
+    "app/**/*.js": {
+      "runtime": "nodejs18.x"
     }
   }
 }
-
